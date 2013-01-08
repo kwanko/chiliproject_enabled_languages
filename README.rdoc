@@ -21,10 +21,12 @@ The newest version is always at {GitHub}[http://github.com/kwanko/chiliproject_e
 
 === Plugin installation
 
-1. Copy the plugin directory(chiliproject_post_it) into the vendor/plugins directory
+1. Copy the plugin directory(chiliproject_enabled_languages) into the vendor/plugins directory
+
    NOTE: The plugin directory must be chiliproject_enabled_languages!
 
 2. Migrate plugin:
+
    rake db:migrate_plugins NAME=chiliproject_enabled_languages RAILS_ENV=production
 
 3. Start Chiliproject
@@ -37,12 +39,14 @@ The newest version is always at {GitHub}[http://github.com/kwanko/chiliproject_e
 === Language contributors
 
 fr.yml - Arnauld NYAKU
+
 en.yml - Arnauld NYAKU
 
 
 === Contact info
 
 Homepage -> powered by Chiliproject
+
 Email    -> arnauld.nyaku@c2bsa.com
 
 === Licence
