@@ -1,0 +1,8 @@
+# English strings go here for Rails i18n
+en:
+  label_languages: Languages
+  label_enabled_languages: Enabled/Disabled Languages
+  label_enabled: Enabled
+
+  button_enable: Enable
+  button_disable: Disable

@@ -1,0 +1,41 @@
+<%
+# Enabled languagues for Chiliproject
+# Copyright (C) 2011-2012  Arnauld NYAKU
+%>
+
+<h2><%=l(:label_enabled_languages)%></h2>
+
+<div class="autoscroll">
+<% form_for(:language, :url => {:controller => 'enabled_languages', :action => 'update'}, :lang => current_language, :html => { :method => :post}) do %>
+  <table class="list">
+    <thead><tr>
+          <th align="left"><%= check_box_tag 'checkAll', 0, false, :onclick => "selectAll(this);" %></th>
+          <th><%=  l(:field_language) %></th>
+          <th><%=  l(:field_status) %></th>
+          <th></th>
+    </tr></thead>
+    <tbody>
+
+        <% for lang in EnabledLanguage.all(:order => "language ASC") -%>
+        <% url = {:controller => 'enabled_languages', :action => 'update', :id => lang, :status => params[:status] } %>
+          <tr class="lang <%= cycle("odd", "even") %>">
+                <td align="left"><%= check_box_tag 'status[]', lang.id %></td>
+                <td class="firstname"><%= ll(lang.language.to_s, :general_lang_name) %></td>
+                <td align="center"><%= lang.status ? l(:label_enabled) : l(:label_disabled).capitalize %></td>
+                <td align="right"><small><%= lang.status ? link_to(l(:button_lock), url.merge(:lang => {:status => EnabledLanguage::STATUS_DISABLED}), :method => :put, :class => 'icon icon-lock') : link_to(l(:button_unlock), url.merge(:lang => {:status => EnabledLanguage::STATUS_ENABLED}), :method => :put, :class => 'icon icon-unlock')%></small></td>
+          </tr>
+        <% end -%>
+
+    </tbody>
+  </table>
+  <%= submit_tag l(:button_enable), :name =>'btenable' %>&nbsp;&nbsp;<%= submit_tag l(:button_disable), :name => 'btenable'%>
+<% end %>
+</div>
+
+<script type="text/javascript">
+      function selectAll(check){
+        $$("tbody input[type=checkbox]").each(function(e){
+          check.checked ? $(e).checked = true : $(e).checked = false;
+        });
+      }
+</script>
