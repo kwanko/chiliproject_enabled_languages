@@ -1,0 +1,52 @@
+= Enabled languages
+
+This is a Enabled languages plugin for Chiliproject.
+
+ONLY compatible with Chiliproject 3.X NOT compatible with Chiliproject 2.X
+
+
+= Getting the plugin
+
+The newest version is always at {GitHub}[http://github.com/kwanko/chiliproject_enabled_languages].
+
+
+=== Feature
+
+1. List of enabled languages
+
+2. Enable or Disable a language
+
+3. Only enabled languages are available to user to setup his account language.
+
+
+=== Plugin installation
+
+1. Copy the plugin directory(chiliproject_enabled_languages) into the vendor/plugins directory
+   NOTE: The plugin directory must be chiliproject_enabled_languages!
+
+2. Migrate plugin:
+   rake db:migrate_plugins NAME=chiliproject_enabled_languages RAILS_ENV=production
+
+3. Start Chiliproject
+
+
+=== Changelog
+
+0.0.1 -> first version
+
+=== Language contributors
+
+fr.yml - Arnauld NYAKU
+
+en.yml - Arnauld NYAKU
+
+
+=== Contact info
+
+Homepage -> powered by Chiliproject
+
+Email    -> arnauld.nyaku@c2bsa.com
+
+=== Licence
+
+The code is released under the GPLv2: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
